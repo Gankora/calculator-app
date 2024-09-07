@@ -34,10 +34,18 @@ function App() {
 		let result;
 		switch (operator) {
 			case '+':
-				result = parseFloat(operand1) + parseFloat(operand2);
+				if (operand2 === '') {
+					result = parseFloat(operand1) * 2;
+				} else {
+					result = parseFloat(operand1) + parseFloat(operand2);
+				}
 				break;
 			case '-':
-				result = parseFloat(operand1) - parseFloat(operand2);
+				if (operand2 === '') {
+					result = parseFloat(operand1) - parseFloat(operand1);
+				} else {
+					result = parseFloat(operand1) - parseFloat(operand2);
+				}
 				break;
 			default:
 				result = '';
